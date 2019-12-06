@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>login page</title>
+<link rel="style sheets" type=text/css href="style.css"/>
+<script type="text/javascript">
+function validate(form1)
+{
+var loginid=window.document.form1.login.value;
+var password=window.document.form1.pwd.value;
+check=new RegExp("[^a-z A-Z]","g");
+if(loginid.length<4)
+{
+alert("FacultuID should contain atleast 4 letters");
+return false;
+}
+if(password.length<4)
+{
+alert("password should of atleast 4 letters");
+return false;
+}
+return true;
+}
+</script>
+</head>
+<body style="background-color: #ff5050">
+<form name="form1" method="post" action="reportdetails.php">
+<meta charset="utf-8">
+<title> transparent login form</title>
+<link rel="stylesheet" href="style.css">
+<body>
+<form name="form1" method="post" action="staffcheck.php">
+<div class="login-box">
+<h1>Login</h1>
+<div class="textbox">
+FacultyID:
+<input type="text" placeholder="FacultyID" name="fid" value="">
+</div>
+<div class="textbox">
+Password:
+<input type="password" placeholder="Password" name="pwd" value="">
+</div><br>
+<center>
+<input type="submit" value="login" onclick="return validate(this)"/><br><br>
+</center>
+</font>
+</form>
+</body>
+</html>

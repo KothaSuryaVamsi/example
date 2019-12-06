@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>login page</title>
+<link rel="stylesheet" type="text/css" href="style.css"/>
+<script type="text/javascript">
+function validate(form1)
+{
+ var loginid=window.document.form1.loginname.value;
+ var password=window.document.form1.pwd.value;
+ check=new RegExp("[^a-z A-Z]","g")
+ if(loginid.match(check))
+{
+ alert("Name should contain alphabets only");
+ return false;
+}
+if(loginid.length<5)
+{
+ alert("Name should contain atleast 5 charcters");
+ return false;
+}
+if(password.length<5)
+{
+ alert("Password should contain atleast 5 charcters");
+ return false;
+}
+return true;
+}
+</script>
+</head>
+<body bgcolor=#ffffff>
+<center>
+<h1>Admin Login</h1>
+<form name='form1' method='post'action="admin.php">
+<br>ADMIN ID:<input type="text"  placeholder='id' name="loginname" required></br>
+<br>PASSWORD:<input type="password" placeholder='password' name="pwd" required></br>
+<br><button type="submit"onclick="return validate(this)" formtarget="left"/>Submit </button>
+</form>
+</center>
+</body>
+</html>
